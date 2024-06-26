@@ -1,0 +1,20 @@
+Features:
+1.  Discover cities with attractions, restaurants, (events)
+    - Photos, details, reviews
+    - Add to planner
+2.  Cities recommendations
+3.  Travel planner
+    - Google map integration
+    - Collaborative Planning
+    - Offline Functionality
+4.  Flight, hotel booking price comparisons
+    - Add to planner
+5.  Link to booking platforms
+
+Tech Stack:
+1.  NextJs
+2.  TypeScript
+3.  Tailwind CSS
+4.  Places API
+5.  Firebase
+6.  Redux for NextJS
