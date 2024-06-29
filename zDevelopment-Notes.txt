@@ -1,0 +1,53 @@
+Features:
+1.  Discover cities with attractions, restaurants, (events)
+    - Photos, details, reviews
+    - Add to planner
+2.  Cities recommendations
+3.  Travel planner
+    - Google map integration
+    - Collaborative Planning
+    - Offline Functionality
+4.  Flight, hotel booking price comparisons
+    - Add to planner
+5.  Link to booking platforms
+6.  Blogs
+
+Tech Stack:
+1.  NextJs
+2.  TypeScript
+3.  Tailwind CSS
+4.  Places API
+5.  Firebase
+6.  Redux for NextJS
+7.  Shadcn ui
+
+From Json Response:
+1.  Nearby search, Place details, Text search
+    - id (for place details)
+    - types (array of place types)
+    - internationalPhoneNumber
+    - formattedAddress
+    - location + viewport (mini-map in place details page)
+    - rating
+    - googleMapsUri
+    - websiteUri
+    - priceLevel / null
+    - userRatingCount (for sorting popular places)
+    - displayName
+    - takeout + delivery + dineIn + reservable + servesBreakfast + servesLunch + servesBrunch + servesDinner + servesBeer + servesWine / null
+    - currentOpeningHours
+    - currentSecondaryOpeningHours (happy hours) / null
+    - editorialSummary
+    - reviews
+    - photos
+    - paymentOptions / null
+    - X-Goog-FieldMask: 
+      - places.id,places.types,places.nationalPhoneNumber,places.formattedAddress,places.location,places.viewport,places.rating,places.googleMapsUri,places.websiteUri,places.priceLevel,places.userRatingCount,places.displayName,places.takeout,places.delivery,places.dineIn,places.reservable,places.servesBreakfast,places.servesLunch,places.servesBrunch,places.currentOpeningHours,places.currentSecondaryOpeningHours,places.editorialSummary,places.reviews,places.photos,places.paymentOptions
+
+    Arrange
+    - 
+
+2.  Place photo
+
+Cities Background Images
+- if needed search https://www.pinterest.com/digitaldreamdiaries/
