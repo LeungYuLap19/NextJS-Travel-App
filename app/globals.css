@@ -19,7 +19,7 @@
 
   /* logo */
   .logo-text {
-     @apply font-bold green-gradient bg-clip-text text-transparent
+     @apply font-bold green-gradient bg-clip-text text-transparent max-sm:text-2xl
   }
 
   /* header text */
@@ -38,11 +38,11 @@
   }
 
   .auth-container {
-    @apply flex justify-center items-center min-h-screen w-1/2 max-lg:w-full
+    @apply flex justify-center items-start h-screen overflow-auto w-1/2 max-lg:w-full
   }
 
   .auth-wrapper {
-    @apply flex flex-col justify-center items-center min-h-screen w-[420px] py-7
+    @apply flex flex-col justify-center items-center min-h-screen max-w-[420px] py-7 w-full
   }
 
   .auth-button {
@@ -67,6 +67,41 @@
 
   .auth-form-input {
     @apply bg-customWhite-100 text-base border border-customBlack-100 placeholder:text-customBlack-100 font-normal
+  }
+
+  /* top nav */
+  .top-nav-container {
+    @apply h-fit w-full relative
+  }
+
+  .top-nav {
+    @apply w-full h-[60px] flex justify-between items-center absolute top-0 left-0
+  }
+
+  .top-nav-tabs {
+    @apply flex justify-between items-center w-fit gap-2
+  }
+
+  .top-nav-profile {
+    @apply flex justify-center items-center text-xl h-12 aspect-square green-gradient text-customWhite-200 rounded-full flex-shrink-0 ml-3 max-sm:h-10
+  }
+
+  /* bot nav */
+  .bot-nav-container {
+    @apply fixed bottom-7 left-[50%] -translate-x-1/2 lg:hidden
+  }
+
+  .bot-nav {
+    @apply bg-customWhite-200 flex p-3 drop-shadow-default rounded-xl gap-[1vw]
+  }
+
+  /* nav tab */
+  .nav-tab {
+    @apply py-2 px-4 rounded-lg max-sm:text-sm text-customBlack-300
+  }
+
+  .nav-tab-active {
+    @apply bg-customGreen-400 text-customWhite-200
   }
 }
 

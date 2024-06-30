@@ -14,7 +14,7 @@ export default function page() {
       <div className='auth-wrapper'>
         <Logo 
           height={108} width={120}
-          style='text-4xl'
+          style='!text-4xl'
         />
 
         <div className='auth-col px-4 mb-6'>

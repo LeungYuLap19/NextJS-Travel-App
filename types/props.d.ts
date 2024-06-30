@@ -13,3 +13,9 @@ declare interface LogoProps {
 declare interface AuthFormProps {
     type: 'sign-in' | 'sign-up';
 }
+
+declare interface NavigationTabProps {
+    label: 'Discover' | 'Planner' | 'Blog' | 'Bookings';
+    route: string;
+    type: 'top' | 'bot';
+}

@@ -9,8 +9,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { authFormSchema } from '@/lib/utils'
 import Link from 'next/link'
 import CustomInput from './CustomInput'
+import { useRouter } from 'next/navigation'
 
 export default function AuthForm({ type }: AuthFormProps) {
+    const router = useRouter();
     const formSchema = authFormSchema(type);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -25,16 +27,17 @@ export default function AuthForm({ type }: AuthFormProps) {
 
     function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values);
+        router.push('/');
     }
 
     return (
         <div className='auth-wrapper'>
             <Logo 
                 height={60} width={60}
-                style='text-3xl'
+                style='!text-3xl'
             />
 
-            <div className='auth-col my-10 pl-5'>
+            <div className='auth-col my-10 px-5'>
                 <p className='header-text'>
                     { type === 'sign-in' ? 'Login' : 'Sign Up' }
                 </p>
@@ -47,7 +50,7 @@ export default function AuthForm({ type }: AuthFormProps) {
                 </p>
             </div>
 
-            <div className='auth-col mb-6 pl-5'>
+            <div className='auth-col mb-6 px-5'>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)}>
                         <div className='flex flex-col gap-7 mb-10'>
@@ -98,7 +101,7 @@ export default function AuthForm({ type }: AuthFormProps) {
                     }
                 </p>
                 <Link
-                    className='text-sm logo-text !font-semiBold'
+                    className='!text-sm logo-text !font-semiBold'
                     href={ type === 'sign-in' ? '/sign-up' : 'sign-in' }
                 >
                     { type === 'sign-in' ? 'Sign Up' : 'Login' }

@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      dropShadow: {
+        default: '0px 0px 8px rgba(0, 0, 0, 0.10)'
+      },
       fontFamily: {
         inter: ['var(--font-inter)'],
         ubuntu: ['var(--font-ubuntu)'],
