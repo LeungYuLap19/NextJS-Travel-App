@@ -18,6 +18,18 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        '3xl': '2250px'
+      },
+      maxWidth: {
+          'details-custom': 'calc((100vh - 136px) * 0.7)'
+      },
+      maxHeight: {
+        'details-custom': 'calc(100vh - 136px)'
+      },
+      height: {
+        'details-custom': 'calc(100vh - 136px)'
+      },
       dropShadow: {
         default: '0px 0px 8px rgba(0, 0, 0, 0.10)'
       },

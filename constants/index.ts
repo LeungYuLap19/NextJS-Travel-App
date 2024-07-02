@@ -1,22 +1,41 @@
 export const navLinks: NavigationTabProps[] = [
     {
-        imgUrl: '/root/icons/discover.svg',
         label: 'Discover',
-        route: '/'
+        route: '/discover'
     },
     {
-        imgUrl: '/root/icons/planner.svg',
         label: 'Planner',
         route: '/planner'
     },
     {
-        imgUrl: '/root/icons/blog.svg',
         label: 'Blog',
         route: '/blog'
     },
     {
-        imgUrl: '/root/icons/booking.svg',
         label: 'Bookings',
         route: '/bookings'
     }
+];
+
+export const searchTabs: SearchTabProps[] = [
+    {
+        label: 'All',
+        imgUrl: '/root/icons/all.svg'
+    },
+    {
+        label: 'Attractions',
+        imgUrl: '/root/icons/attractions.svg'
+    },
+    {
+        label: 'Restaurants',
+        imgUrl: '/root/icons/restaurants.svg'
+    },
+    {
+        label: 'Shopping',
+        imgUrl: '/root/icons/shopping.svg'
+    },
+    {
+        label: 'Nightlife',
+        imgUrl: '/root/icons/nightlife.svg'
+    },
 ];

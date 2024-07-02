@@ -27,7 +27,7 @@ export default function AuthForm({ type }: AuthFormProps) {
 
     function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values);
-        router.push('/');
+        router.push('/discover');
     }
 
     return (

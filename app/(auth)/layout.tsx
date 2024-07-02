@@ -9,9 +9,8 @@ export default function RootLayout({ children }: Readonly<{children: React.React
                 <Image 
                     src={'/auth/bgs/bg2.jpg'}
                     alt='auth-background'
-                    layout='fill'
-                    objectFit='cover'
-                    objectPosition='center'
+                    fill={true}
+                    style={{objectFit: 'cover', objectPosition: 'center'}}
                 />
             </div>
         </main>

@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
+import qs from "query-string";
 import { z } from "zod";
 
 export function cn(...inputs: ClassValue[]) {
@@ -12,3 +13,23 @@ export const authFormSchema = (type: 'sign-in' | 'sign-up') => z.object({
   email: z.string().email(),
   password: z.string().min(8),
 });
+
+export const handleKeyDown = ({event, func}: HandleKeyDownParams) => {
+  if (event.key === 'Enter') {
+    func();
+  }
+}
+
+export function formUrlQuery({ params, query, extraRoute }: UrlQueryParams) {
+  const currentUrl = qs.parse(params);
+
+  const newQueryParams = { ...currentUrl, ...query };
+
+  return qs.stringifyUrl(
+    {
+      url: window.location.pathname + (extraRoute || ''),
+      query: newQueryParams,
+    },
+    { skipNull: true }
+  );
+}

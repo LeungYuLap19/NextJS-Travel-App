@@ -123,3 +123,16 @@ declare type User = {
     bio?: string;
     icon?: string;
 }
+
+// functions types
+declare type HandleKeyDownParams = {
+    event: React.KeyboardEvent<HTMLInputElement>;
+    func: () => void;
+}
+
+declare type UrlQueryParams = {
+    params: string;
+    query: Record<string, string>;
+    extraRoute?: string;
+};
+  

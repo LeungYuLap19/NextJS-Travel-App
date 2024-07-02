@@ -1,5 +1,5 @@
-import BottomNavigation from '@/components/root/BottomNavigation'
-import Navigation from '@/components/root/Navigation'
+import BottomNavigation from '@/components/navigation/BottomNavigation'
+import Navigation from '@/components/navigation/Navigation'
 import React from 'react'
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {

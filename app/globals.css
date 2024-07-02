@@ -54,7 +54,7 @@
   }
 
   .auth-welcome-features {
-    @apply w-fit py-2 px-4 rounded-[8px]
+    @apply w-fit py-2 px-4 rounded-lg
   }
 
   .auth-footer {
@@ -71,11 +71,11 @@
 
   /* top nav */
   .top-nav-container {
-    @apply h-fit w-full relative
+    @apply h-fit w-full fixed top-0 left-0 pt-7 px-[6%] bg-customWhite-100 z-10
   }
 
   .top-nav {
-    @apply w-full h-[60px] flex justify-between items-center absolute top-0 left-0
+    @apply w-full h-[60px] flex justify-between items-center 
   }
 
   .top-nav-tabs {
@@ -103,77 +103,100 @@
   .nav-tab-active {
     @apply bg-customGreen-400 text-customWhite-200
   }
+
+  /* main-pages */
+  
+
+  /* discover */
+  .discover {
+    @apply flex flex-col gap-7 pt-[60px] max-sm:pt-[30px] max-lg:pb-28
+  }
+  
+  .header {
+    @apply text-4xl font-bold text-customBlack-300 max-md:text-3xl
+  }
+
+  /* discover search */
+  .search-box {
+    @apply flex gap-[20px] max-md:flex-col md:mb-12
+  }
+
+  .search-input {
+    @apply border border-customBlack-100 placeholder:text-customBlack-100 h-[50px] md:w-[60%] max-md:h-10 flex-shrink-0
+  }
+
+  .subtitle {
+    @apply text-3xl font-semibold text-customBlack-300 max-md:text-xl
+  }
+
+  .search-tabs {
+    @apply flex items-center h-[50px] max-md:h-10 overflow-auto
+  }
+
+  .search-tab {
+    @apply flex gap-2 items-center px-4 py-2 text-customBlack-300 rounded-md cursor-pointer max-2xl:text-sm
+  }
+
+  .search-tab-active {
+    @apply bg-customGreen-400 text-customWhite-200
+  }
+
+  /* discover results */
+  .discover-results {
+    @apply w-full flex flex-col gap-7 
+  }
+
+  .results-grid {
+    @apply w-full grid grid-cols-4 gap-7 max-lg:grid-cols-3 max-md:grid-cols-2 max-lg:gap-4 3xl:grid-cols-6
+  }
+
+  .results-item {
+    @apply w-full bg-customWhite-200 rounded-lg overflow-hidden
+  }
+
+  .results-item-photo {
+    @apply w-full aspect-square bg-customBlack-100 relative
+  }
+
+  .results-item-label {
+    @apply flex w-full items-center pl-2 pr-4 pt-1 pb-2
+  }
+
+  .results-item-info {
+    @apply flex flex-col justify-between flex-grow
+  }
+
+  /* details */
+  .details-page {
+    @apply flex gap-7 w-full max-lg:pb-28 max-md:flex-col pt-5
+  }
+
+  .details-tab {
+    @apply border-b border-customBlack-100 rounded-none 
+    text-customBlack-100 text-base max-2xl:text-sm
+  }
+
+  .details-tab-active {
+    @apply border-customGreen-400 text-customGreen-400
+  }
+
+  .details-content {
+    @apply w-fit pt-14 md:h-details-custom md:overflow-auto mt-0
+  }
+
+  .content-details {
+    @apply flex flex-col gap-12 text-customBlack-300
+  }
+
+  .content-details-section {
+    @apply flex flex-col gap-5
+  }
+
+  .detailsTable {
+    @apply flex max-2xl:text-sm
+  }
+
+  .photo-card {
+    @apply md:w-[60%] md:h-fit md:max-w-details-custom aspect-[7/10] flex flex-col rounded-xl overflow-hidden bg-customWhite-200 flex-shrink-0
+  }
 }
-
-/* @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-} */
