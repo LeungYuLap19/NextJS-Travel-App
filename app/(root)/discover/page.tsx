@@ -5,11 +5,19 @@ import Search from '@/components/discover/Search'
 import SearchTab from '@/components/discover/SearchTab'
 import Subtitle from '@/components/discover/Subtitle'
 import { searchTabs } from '@/constants'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+// test data
+import nearbyData from '../../../jsons/nearby-search-example.json';
+import textSearchData from '../../../jsons/text-search-example.json';
+import { filterPlacesData, storePlacesToLocal } from '@/lib/actions/places.actions'
 
 export default function page() {
   // temp active tab
   const [activeTab, setActiveTab] = useState<string>(searchTabs[0].label);
+  useEffect(() => {
+    const filteredPlaces = filterPlacesData(nearbyData.places);
+    storePlacesToLocal({ key: 'places', data: filteredPlaces });
+  }, []);
 
   return (
     <div className='discover'>
@@ -28,6 +36,7 @@ export default function page() {
             searchTabs.map(tab => {
               return (
                 <SearchTab 
+                  key={tab.label}
                   label={tab.label}
                   imgUrl={tab.imgUrl}
                   // temp active tab

@@ -33,12 +33,12 @@ declare interface SearchTabProps {
 }
 
 declare interface PhotoProps {
-    imgUrl?: string;
-    placeName: string;
+    placeName?: string;
+    morePhoto?: boolean;
 }
 
 declare interface DetailsTableProps {
-    label: 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun' | 'Address' | 'Phone';
+    label: string;
     data: string;
     first?: boolean;
 }

@@ -1,10 +1,18 @@
 // Nearby search, Place details, Text search
+declare type PlaceItem = {
+    id: string;
+    rating: number;
+    types: string[];
+    displayName: LocalizedText;
+    photos: Photo[];
+}
+
 declare type Place = {
     id: string;
     types: string[];
     internationalPhoneNumber: string;
     formattedAddress: string;
-    location: Location;
+    location: PinLocation;
     viewport: Viewport;
     rating: number;
     googleMapsUri: string;
@@ -19,6 +27,9 @@ declare type Place = {
     servesBreakfast?: boolean; 
     servesLunch?: boolean; 
     servesBrunch?: boolean; 
+    servesDinner?: boolean;
+    servesBeer?: boolean;
+    servesWine?: boolean
     currentOpeningHours: CurrentOpeningHours;
     currentSecondaryOpeningHours?: CurrentSecondaryOpeningHours[]; 
     editorialSummary: LocalizedText;
@@ -32,14 +43,14 @@ declare type LocalizedText = {
     languageCode: string;
 }
 
-declare type Location = {
+declare type PinLocation = {
     latitude: number;
     longitude: number;
 }
 
 declare type Viewport = {
-    low: Location;
-    high: Location;
+    low: PinLocation;
+    high: PinLocation;
 }
 
 declare interface CurrentOpeningHours {
@@ -122,7 +133,7 @@ declare type User = {
     city: string;
     bio?: string;
     icon?: string;
-}
+} 
 
 // functions types
 declare type HandleKeyDownParams = {
@@ -135,4 +146,9 @@ declare type UrlQueryParams = {
     query: Record<string, string>;
     extraRoute?: string;
 };
+
+declare type StorePlacesToLocalParams = {
+    key: string;
+    data: Place[]; // can be other types
+}
   

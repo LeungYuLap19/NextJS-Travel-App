@@ -39,3 +39,7 @@ export const searchTabs: SearchTabProps[] = [
         imgUrl: '/root/icons/nightlife.svg'
     },
 ];
+
+export const weekdays: string[] = [
+    'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'
+]

@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Photo from './Photo'
 import { Rating } from '@mui/material'
@@ -6,15 +5,15 @@ import Image from 'next/image'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { formUrlQuery } from '@/lib/utils'
 
-export default function ResultsItem() {
+export default function ResultsItem({ item }: { item: PlaceItem }) {
     const searchParams = useSearchParams();
     const router = useRouter();
     const handleOnClick = () => {
         const newUrl = formUrlQuery({
             params: searchParams.toString(),
             query: {
-                id: 'testingID',
-                type: 'details',
+                id: item.id,
+                type: 'reviews',
             },
             extraRoute: '/details'
         });
@@ -27,20 +26,32 @@ export default function ResultsItem() {
             onClick={handleOnClick}
         >
             <div className='results-item-photo'>
-                <Photo 
-                    placeName='test'
-                />
+                {
+                    item.photos ?
+                    <Photo placeName={item.photos[0].name} /> :
+                    <Photo />
+                }
             </div>
 
             <div className='results-item-label'>
                 <div className='results-item-info'>
-                    <p className='truncate'>Place Name</p>
-                    <p className='text-xs text-customBlack-100 truncate'>Types</p>
+                    <p className='truncate'>{item.displayName.text}</p>
+                    <p className='text-xs text-customBlack-100 truncate'>
+                        {
+                            item.types.map((type: string) => {
+                                return (
+                                    <React.Fragment key={type}>
+                                        {type.replaceAll('_', ' ') + ', '}
+                                    </React.Fragment>
+                                )
+                            })
+                        }
+                    </p>
                     <Rating 
                         className='mt-2' 
                         name="half-rating-read" 
-                        defaultValue={0} 
-                        precision={0.5} 
+                        defaultValue={item.rating} 
+                        precision={0.1} 
                         size="small" readOnly 
                     />
                 </div>
