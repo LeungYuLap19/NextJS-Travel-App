@@ -19,7 +19,7 @@ export default function Details({ details }: { details: Place }) {
         details.editorialSummary &&
         <div className='content-details-section'>
           <p className='subtitle'>Overview</p>
-          <p className='max-2xl:text-sm'>{details.editorialSummary.text}</p>
+          <p className='max-2xl:text-sm w-fit'>{details.editorialSummary.text}</p>
         </div>
       }
 
@@ -73,7 +73,7 @@ export default function Details({ details }: { details: Place }) {
       <div className='content-details-section'>
         <p className='subtitle'>Basic Information</p>
         <div className='flex flex-col'>
-          <DetailsTable label='Website' data={details.websiteUri} />
+          <DetailsTable label='Website' data={details.websiteUri + ', ' + details.displayName.text} />
           <DetailsTable label="Address" data={details.formattedAddress} /> 
           <DetailsTable label='Phone' data={details.internationalPhoneNumber} />
         </div>

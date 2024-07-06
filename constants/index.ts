@@ -43,3 +43,44 @@ export const searchTabs: SearchTabProps[] = [
 export const weekdays: string[] = [
     'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'
 ]
+
+export const placesFieldMask = [
+    'id',
+    // 'types',
+    'internationalPhoneNumber',
+    'formattedAddress',
+    'location',
+    'viewport',
+    // 'rating',
+    'googleMapsUri',
+    'websiteUri',
+    // 'priceLevel',
+    // 'userRatingCount',
+    'displayName',
+    // 'takeout',
+    'delivery',
+    'dineIn',
+    'reservable',
+    'servesBreakfast',
+    'servesLunch',
+    'servesBrunch',
+    'servesDinner',
+    'servesBeer',
+    'servesWine',
+    'currentOpeningHours',
+    // 'currentSecondaryOpeningHours',
+    'editorialSummary',
+    'reviews',
+    // 'photos',
+    'paymentOptions',
+    // 'nextPageToken'
+].join(',');
+
+export const placesItemFieldMask = [
+    'places.id',
+    'places.types',
+    'places.rating',
+    'places.displayName',
+    'places.photos',
+    'nextPageToken'
+].join(',');

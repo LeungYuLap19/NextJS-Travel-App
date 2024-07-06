@@ -6,7 +6,8 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import Details from '@/components/details/Details';
 import Reviews from '@/components/details/Reviews';
-import { filterItemData, getPlaceById } from '@/lib/actions/places.actions';
+import { getPlaceById } from '@/lib/actions/places.actions';
+import { placeDetails } from '@/lib/actions/apis.actions';
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -14,18 +15,20 @@ export default function Page() {
   const id = searchParams.get('id');
   const type = searchParams.get('type');
 
-  const [place, setPlace] = useState<Place | null>(null);
+  const [place, setPlace] = useState(null);
   const [reviews, setReviews] = useState<Review[] | null>(null);
   const [item, setItem] = useState<PlaceItem | null>(null);
+  
+  const loadPlaceData = async () => {
+    const placeItem = getPlaceById(id!, 'places') || getPlaceById(id!, 'defaultPlaces');
+    setItem(placeItem);
+    const details = await placeDetails(id!);
+    setPlace(details);
+    setReviews(details.reviews);
+  }
 
   useEffect(() => {
-    const fetchedPlace = getPlaceById(id!, 'places');
-    if (fetchedPlace) {
-      const placeItem = filterItemData([fetchedPlace]);
-      setItem(placeItem[0]);
-      setPlace(fetchedPlace);
-      setReviews(fetchedPlace.reviews);
-    }
+    loadPlaceData();
   }, [id]);
 
   const handleTabClick = (newType: string) => {
@@ -40,9 +43,9 @@ export default function Page() {
         place && reviews && item &&
         <>
           <PhotosCard item={item} />
-          <div className='w-fit'>
+          <div className='w-full'>
             <Tabs defaultValue={type!} className='w-full flex flex-col items-start max-md:items-center relative'>
-              <TabsList className='p-0 mb-7 absolute top-0 left-0 w-full md:justify-start bg-customWhite-100 z-5'>
+              <TabsList className='p-0 mb-7 absolute top-0 left-0 w-full md:justify-start bg-customWhite-100 z-40 rounded-none'>
                 <TabsTrigger 
                   value="reviews" 
                   className={cn('details-tab', {

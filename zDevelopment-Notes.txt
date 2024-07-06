@@ -51,3 +51,10 @@ From Json Response:
 
 Cities Background Images
 - if needed search https://www.pinterest.com/digitaldreamdiaries/
+
+
+Modify the data fetches for search, get only variables for PlaceItem
+save photos of PlaceItem in localstorage to reduce data usage
+fetch place details in detail page
+
+maybe change it back it search by url params

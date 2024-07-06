@@ -19,7 +19,7 @@ export default function PhotosCard({ item }: { item: PlaceItem }) {
           <div className='absolute md:left-7 left-5 md:bottom-7 bottom-5 md:w-16 w-12 aspect-square rounded-lg border-2 border-customWhite-200 overflow-hidden cursor-pointer'>
             <div className='relative w-full h-full'>
               <Photo placeName={item.photos[1].name} morePhoto={true} />
-              <p className='absolute top-0 left-0 w-full h-full flex justify-center items-center text-customWhite-200 text-xl'>{morePhotos + '+'}</p>
+              <p className='absolute top-0 left-0 w-full h-full flex justify-center items-center text-customWhite-200 text-lg'>{morePhotos + '+'}</p>
             </div>
           </div>
         }

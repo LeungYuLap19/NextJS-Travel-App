@@ -71,7 +71,7 @@
 
   /* top nav */
   .top-nav-container {
-    @apply h-fit w-full fixed top-0 left-0 pt-7 px-[6%] bg-customWhite-100 z-10
+    @apply h-fit w-full fixed top-0 left-0 pt-7 px-[6%] bg-customWhite-100 z-50
   }
 
   .top-nav {
@@ -88,7 +88,7 @@
 
   /* bot nav */
   .bot-nav-container {
-    @apply fixed bottom-7 left-[50%] -translate-x-1/2 lg:hidden
+    @apply fixed bottom-7 left-[50%] -translate-x-1/2 lg:hidden z-50
   }
 
   .bot-nav {
@@ -181,11 +181,11 @@
   }
 
   .details-content {
-    @apply w-fit pt-14 md:h-details-custom md:overflow-auto mt-0
+    @apply w-full pt-14 md:h-details-custom md:overflow-auto mt-0
   }
 
   .content-details {
-    @apply flex flex-col gap-7 text-customBlack-300
+    @apply flex flex-col gap-7 text-customBlack-300 w-full
   }
 
   .content-details-section {
@@ -193,11 +193,11 @@
   }
 
   .detailsTable {
-    @apply flex max-2xl:text-sm
+    @apply flex max-2xl:text-sm max-w-full
   }
 
   .map {
-    @apply w-full md:max-w-[450px] rounded-lg aspect-square bg-customBlack-100 overflow-hidden
+    @apply md:max-w-[450px] rounded-lg aspect-square bg-customBlack-100 overflow-hidden
   }
 
   .photo-card {

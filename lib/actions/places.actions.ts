@@ -12,6 +12,7 @@ function storePlacesToLocal({ key, data }: StorePlacesToLocalParams) {
 function getPlacesFromLocal(key: string): Place[] {
     try {
         const jsonData = localStorage.getItem(key);
+        
         if (jsonData) {
             return JSON.parse(jsonData);
         }

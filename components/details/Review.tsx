@@ -23,7 +23,10 @@ export default function Review({ review }: { review: Review }) {
                 </div>
             </div>
 
-            <p className='max-2xl:text-sm'>{review.originalText.text}</p>
+            {
+                review.originalText && <p className='max-2xl:text-sm'>{review.originalText.text}</p>
+            }
+            
         </div>
     )
 }

@@ -13,12 +13,12 @@ declare type Place = {
     internationalPhoneNumber: string;
     formattedAddress: string;
     location: PinLocation;
-    viewport: Viewport;
+    viewport: Viewport; // dont need
     rating: number;
     googleMapsUri: string;
     websiteUri: string;
-    priceLevel?: number; 
-    userRatingCount: number;
+    priceLevel?: number; // dont need
+    userRatingCount: number; // dont need
     displayName: LocalizedText;
     takeout?: boolean; 
     delivery?: boolean; 
@@ -31,7 +31,7 @@ declare type Place = {
     servesBeer?: boolean;
     servesWine?: boolean
     currentOpeningHours: CurrentOpeningHours;
-    currentSecondaryOpeningHours?: CurrentSecondaryOpeningHours[]; 
+    currentSecondaryOpeningHours?: CurrentSecondaryOpeningHours[]; //dont need 
     editorialSummary: LocalizedText;
     reviews: Review[];
     photos: Photo[];
@@ -110,9 +110,9 @@ declare type PaymentOptions = {
 }
 
 // Place photo
-declare type PhotoApiResponse = {
-    name: string;
-    photoUri: string;
+declare type PhotoInStorage = {
+    id: string;
+    url: string;
 };
 
 // User
